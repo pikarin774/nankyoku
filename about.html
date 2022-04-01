@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <title>南極。について | 南極。</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+
+  <meta name="description" content="base_description">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="webview:title" content="南極。について">
+  <meta name="theme-color" content="#000">
+
+  
+    <meta property="og:url" content="http://localhost:8003/about/">
+    <meta property="og:title" content="南極。について | 南極。">
+    <meta property="og:description" content="base_description">
+    <meta property="og:site_name" content="南極。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="http://localhost:8003/assets/images/ogimage_01.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@Chata_Curio" />
+    <meta name="twitter:title" content="南極。について | 南極。">
+    <meta name="twitter:description" content="base_description">
+  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;500;800&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png" />
+
+  <style>
+    .body[v-cloak] {
+  overflow: scroll
+}
+
+.is-lazyload,
+.is-lazyloading {
+  max-width: 64px;
+}
+
+.f-section__loading {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 1);
+  z-index: 30;
+}
+
+.f-section__loading[v-cloak] {
+  display: block;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.f-section__loading:not([v-cloak]) {
+  animation: hideLoading 1s ease forwards;
+}
+
+.f-section__loading--body {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+@keyframes hideLoading {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  99% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-9999px);
+  }
+}
+
+.l-unit__loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.l-unit__loading--image {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 31;
+}
+
+.l-unit__loading--description {
+  width: 100%;
+}
+
+.o-logo__nankyoku.is-loading {
+  opacity: 1;
+}
+
+.o-logo__nankyoku.is-loading > .o-logo__nankyoku--item {
+  width: 20%;
+  max-width: 320px;
+  height: auto;
+  margin: 0 auto;
+}
+
+@media screen and (max-width:1024px) {
+  .o-logo__nankyoku.is-loading > .o-logo__nankyoku--item {
+    width: 30%;
+    max-width: none;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .o-logo__nankyoku.is-loading > .o-logo__nankyoku--item {
+    width: 40%;
+    max-width: none;
+  }
+}
+
+@media screen and (max-width:520px) {
+  .o-logo__nankyoku.is-loading > .o-logo__nankyoku--item {
+    width: 50%;
+    max-width: none;
+  }
+}
+
+.o-figure__loading {
+  width: 15%;
+  max-width: 240px;
+  position: relative;
+  margin: 0px auto;
+}
+
+@media screen and (max-width:1024px) {
+  .o-figure__loading {
+    width: 23%;
+    max-width: none;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .o-figure__loading {
+    width: 32%;
+    max-width: none;
+  }
+}
+
+@media screen and (max-width:520px) {
+  .o-figure__loading {
+    width: 40%;
+    max-width: none;
+  }
+}
+
+.o-figure__loading:before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.o-figure__loading--item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform-origin: center center;
+  -webkit-transform-origin: center center;
+  -ms-transform-origin: center center;
+  animation: rotate 2s linear infinite;
+  -webkit-animation: rotate 2s linear infinite;
+}
+
+.o-figure__loading--path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke: #fff;
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+  -webkit-animation: dash 1.5s ease-in-out infinite;
+}
+
+@-webkit-keyframes
+rotate {
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes
+rotate {
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes
+dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124;
+  }
+}
+
+@keyframes
+dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124;
+  }
+}
+
+    
+  </style>
+
+  <link href="/assets/styles/app.min.css" rel="stylesheet">
+
+  <!-- /local codes -->
+</head>
+<body class="body" data-pageId="about">
+
+<div
+  class="f-container is-about"
+  :class="{ 'is-blackOut': isBlackOut }"
+  id="app"
+  :data-is-screen-lock="isLock ? 'true' : 'false'">
+
+  <div class="f-container--body">
+    
+    <header
+  class="f-header"
+  :class="[
+    'f-header',
+    { 'is-fill': header.isOverThreshold },
+  ]"
+  ref="header">
+  <div class="f-header--body">
+    <section class="f-section__header">
+      <div class="f-section__header--body">
+        <div class="l-cols__header">
+          <!-- ロゴ -->
+          <div class="l-cols__header--col is-logo">
+            <div class="o-logo__nankyoku is-header">
+              <p class="o-logo__nankyoku--item">
+                <a class="o-logo__nankyoku--link" href="/">
+                  <img
+                    class="o-logo__nankyoku--image"
+                    :src="`${$GLOBAL_NAME.IMAGES.DIRECTORY}${header.logo}`"
+                    alt="南極。">
+                </a>
+              </p>
+            <!-- /.o-logo__nankyoku --></div>
+          <!-- /.l-cols__header col --></div>
+
+          <!-- ヘッダーナビゲーション -->
+          <div class="l-cols__header--col is-globalNavigation">
+            <follow-sns :state-class-name="['is-header']" />
+            
+          <!-- /.l-cols__header col --></div>
+
+          <div class="l-cols__header--col is-hamburger">
+            <div class="o-action__hamburger u-link__tooltip" data-tooltip="メニュー">
+              <button class="o-action__hamburger--item" @click.prevent="showGlobalNavigation">
+                メニュー
+              </button>
+            <!-- /.o-action__hamburger --></div>
+          <!-- /.l-cols__header col --></div>
+        <!-- /.l-cols__header --></div>
+      <!-- /.f-section__header body --></div>
+    <!-- /.f-section__header --></section>
+  <!-- /.f-header body --></div>
+<!-- /.f-header --></header>
+
+
+    
+    <main class="main">
+      
+<article class="f-article" :ref="showHeaderThreshold">
+  <div class="f-article--body">
+    <section class="f-section__hero is-about">
+      <div class="f-section__hero--body">
+        <carousel-fade
+          :items="hero.items"
+          :select-index="hero.index"
+          :enable-controller="false"
+          :enable-auto-play="true"
+          :has-indicator="false"
+          :auto-play-interval-millis="5000"
+          :additional-style-class="[
+            'is-about',
+          ]">
+          <template slot-scope="{ item }">
+            <div class="o-figure__hero is-about">
+              <div
+                class="o-figure__hero--item"
+                :style="{
+                  backgroundImage: `url(${$GLOBAL_NAME.IMAGES.DIRECTORY}${item.image}`
+                }">
+              </div>
+            <!-- /.o-figure__hero --></div>
+          </template>
+        </carousel-fade>
+
+        <div class="o-heading__page is-about">
+          <h1 class="o-heading__page--item">
+            <span class="o-heading__page--label is-primary">
+              ABOUT
+            </span>
+            <span class="o-heading__page--label is-secondary">
+              代表からのありがたいメッセージ
+            </span>
+          </h1>
+        <!-- /.o-heading__page --></div>
+      <!-- /.f-section__hero body --></div>
+    <!-- /.f-section__hero --></section>
+
+    
+    <section class="f-section__about">
+      <div class="f-section__about--body">
+        <div class="l-unit__about is-right">
+          <div class="l-unit__about--header">
+            <div class="o-heading__section is-about">
+              <h2 class="o-heading__section--item">真の PvP コミュニティを目指して</h2>
+            <!-- /.o-heading__section --></div>
+          <!-- /.l-unit__about header --></div>
+
+          <div class="l-unit__about--image">
+            <div class="o-figure__about">
+              <img
+                class="o-figure__about--item"
+                :src="`${$GLOBAL_NAME.IMAGES.DIRECTORY}pic_about_01.jpg`"
+                alt="">
+            <!-- /.o-figure__about --></div>
+          <!-- /.l-unit__about image --></div>
+
+          <div class="l-unit__about--description">
+            <p class="p">
+              今、フロントライン業界は革命の時代に突入しています。<br>
+              漆黒パッチ初頭に起こったパラダイムシフトにより様々なキャズムが取り払われ、各コミュニティのコアコンピタンスがコモディティ化された結果、先の見えない混沌とした戦場が我々の眼前に覆いかぶさってきています。南極はコミュニティの強みでもあるファクトベースにおけるブルーオーシャン戦略、いわゆるボトルネックを排除したベネフィット創出戦略にフルコミットする事で、安定的な戦果・成長を続けています。
+            </p>
+          <!-- /.l-unit__about description --></div>
+        <!-- /.l-unit__about --></div>
+
+        <div class="l-unit__about is-left">
+          <div class="l-unit__about--header">
+            <div class="o-heading__section is-about">
+              <h2 class="o-heading__section--item">
+                リーディングコミュニティから<br>
+                ビジョナリー・コミュニティへ
+              </h2>
+            <!-- /.o-heading__section --></div>
+          <!-- /.l-unit__about header --></div>
+
+          <div class="l-unit__about--image">
+            <div class="o-figure__about">
+              <img
+                class="o-figure__about--item"
+                :src="`${$GLOBAL_NAME.IMAGES.DIRECTORY}pic_about_02.jpg`"
+                alt="">
+            <!-- /.o-figure__about --></div>
+          <!-- /.l-unit__about image --></div>
+
+          <div class="l-unit__about--description">
+            <p class="p">
+              今フロントライン業界は成熟期に入ろうとしています。<br>
+              我々南極のミッションは、このユビキタスなフロントライン界にイノベーションを起こす為のビジョンをコミットし、 WinWinの関係でプレイングパートナーとしてメンバーのプレイヤーキャリアパスをビルドアップし、 常にプレイングエクスペリエンスをソーシャルな形でローンチし、FL革命、 いわゆるFL2.0時代の幕開けを象徴するかのようなグローバルでありながらもクラウドなコミュニティをアジャイルな形で運営、提供していく事がもっともプライオリティの高いプロジェクトだと考えています。
+            </p>
+          <!-- /.l-unit__about description --></div>
+        <!-- /.l-unit__about --></div>
+
+        <div class="l-unit__about is-right">
+          <div class="l-unit__about--header">
+            <div class="o-heading__section is-about">
+              <h2 class="o-heading__section--item">これが我々のリアルです</h2>
+            <!-- /.o-heading__section --></div>
+          <!-- /.l-unit__about header --></div>
+
+          <div class="l-unit__about--image">
+            <div class="o-figure__about">
+              <img
+                class="o-figure__about--item"
+                :src="`${$GLOBAL_NAME.IMAGES.DIRECTORY}pic_about_03.jpg`"
+                alt="">
+            <!-- /.o-figure__about --></div>
+          <!-- /.l-unit__about image --></div>
+
+          <div class="l-unit__about--description">
+            <p class="p">
+              南極におけるリアルとは？
+              それは限りなくフリーダムでアジャイル、そしてイノベーティブなものだと考えています。シュリンクされたリザルトをどのようなスキームで獲得していくのか、そのモチベーションマネージメントこそが鍵です。挑戦を続ける事により<span class="span u-text__block">PDCA</span>を回し、常にイニシアチブを取りながらインタラクティブに物事を考え、オーソライズしていく。南極のリアルとはそういった想いの先にあるものなのです。ジャストアイデアですが。
+            </p>
+          <!-- /.l-unit__about description --></div>
+        <!-- /.l-unit__about --></div>
+
+      <!-- /.f-section__about body --></div>
+    <!-- /.f-section__about --></section>
+
+    <section class="f-section is-fill__darkgray">
+      <div class="f-section--body">
+        <div class="o-list__note u-text__center">
+          <ul class="o-list__note--items">
+            <li class="o-list__note--item">エイプリルフールのネタサイトです。</li>
+          </ul>
+        <!-- /.o-list__note --></div>
+      <!-- /.f-section body --></div>
+    <!-- /.f-section --></section>
+  <!-- /.f-article body --></div>
+<!-- /.f-article --></article>
+
+
+      <share-services
+        :activate="{ twitter: true }"
+        :stack-anchor-position="footerPosition">
+        
+      </share-services>
+    </main>
+
+    
+    <footer class="footer" ref="footer">
+      
+<section class="f-section__footerNavigation">
+  
+  <div class="f-section__footerNavigation--body">
+    <div class="l-cols__footerNavigation">
+      <navigation-global :state-class-name="['is-footer']" />
+    <!-- /.l-cols__footerNavigation --></div>
+  <!-- /.f-section__footerNavigation body --></div>
+<!-- /.f-section__footerNavigation --></section>
+
+<section class="f-section__footer">
+  
+  <div class="f-section__footer--body">
+    <div class="o-logo__nankyoku is-footer">
+      <h1 class="o-logo__nankyoku--item">
+        <a class="o-logo__nankyoku--link" href="/">
+          <img
+            class="o-logo__nankyoku--image"
+            :src="`${$GLOBAL_NAME.IMAGES.DIRECTORY}logo_black.svg`"
+            alt="南極。">
+        </a>
+      </h1>
+    <!-- /.o-logo__nankyoku --></div>
+  <!-- /.f-section__footer body --></div>
+
+  
+  <div class="f-section__footer--body">
+    <follow-sns :state-class-name="['is-footer']"></follow-sns>
+
+    <div class="o-label__copyright is-footer">
+      <p class="o-label__copyright--item">
+        This website created by Chata Curio in Ifrit server.<br>
+        copyright (c) 2022- 南極。 Some Rights Reserved.
+      </p>
+    <!-- /.o-label__copyright --></div>
+  <!-- /.f-section__footer body --></div>
+<!-- /.f-section__footer --></section>
+
+    </footer>
+
+    <navigation-drawer></navigation-drawer>
+
+    
+    <section class="f-section__loading" v-cloak>
+      <div class="f-section__loading--body">
+        <div class="l-unit__loading">
+          <div class="l-unit__loading--image">
+            <div class="o-logo__nankyoku is-loading">
+              <p class="o-logo__nankyoku--item">
+                <img
+                  class="img"
+                  src="/assets/images/logo_white.svg"
+                  alt=""
+                  width="0"
+                  height="0">
+              </p>
+            <!-- /.o-logo__nankyoku --></div>
+          <!-- /.l-unit__loading image --></div>
+
+          <div class="l-unit__loading--description">
+            <div class="o-figure__loading">
+              <svg class="o-figure__loading--item" viewBox="25 25 50 50">
+                <circle
+                  class="o-figure__loading--path"
+                  cx="50"
+                  cy="50"
+                  r="20"
+                  fill="none"
+                  stroke-width="2"
+                  stroke-miterlimit="10">
+              </svg>
+            <!-- /.o-figure__loading --></div>
+          <!-- /.l-unit__loading description --></div>
+        <!-- /.l-unit__loading --></div>
+      <!-- /.f-section__loading body --></div>
+    <!-- /.f-section__loading --></section>
+  <!-- /.f-container body --></div>
+<!-- /.f-container --></div>
+</body>
+
+<script>
+
+
+var ANTARCTIC_APP = ANTARCTIC_APP || {};
+ANTARCTIC_APP.currentTime = new Date();
+ANTARCTIC_APP.vm = null;
+ANTARCTIC_APP.reactiveData = {
+  local: {  },
+};
+</script>
+
+<script src="/assets/scripts/bundle.development.vendor.js"></script>
+<script src="/assets/scripts/bundle.development.app.js"></script>
+</html>

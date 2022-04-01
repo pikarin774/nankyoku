@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <title>フロントラインツール | 南極。</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+
+  <meta name="description" content="base_description">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="webview:title" content="フロントラインツール">
+  <meta name="theme-color" content="#000">
+
+  
+    <meta property="og:url" content="http://localhost:8003/tools/">
+    <meta property="og:title" content="フロントラインツール | 南極。">
+    <meta property="og:description" content="base_description">
+    <meta property="og:site_name" content="南極。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="http://localhost:8003/assets/images/ogimage_01.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@Chata_Curio" />
+    <meta name="twitter:title" content="フロントラインツール | 南極。">
+    <meta name="twitter:description" content="base_description">
+  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;500;800&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png" />
+
+  <style>
+    .body[v-cloak] {
+  overflow: scroll
+}
+
+.is-lazyload,
+.is-lazyloading {
+  max-width: 64px;
+}
+
+.f-section__loading {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 1);
+  z-index: 30;
+}
+
+.f-section__loading[v-cloak] {
+  display: block;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.f-section__loading:not([v-cloak]) {
+  animation: hideLoading 1s ease forwards;
+}
+
+.f-section__loading--body {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+@keyframes hideLoading {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  99% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-9999px);
+  }
+}
+
+.l-unit__loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.l-unit__loading--image {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 31;
+}
+
+.l-unit__loading--description {
+  width: 100%;
+}
+
+.o-logo__nankyoku.is-loading {
+  opacity: 1;
+}
+
+.o-logo__nankyoku.is-loading > .o-logo__nankyoku--item {
+  width: 20%;
+  max-width: 320px;
+  height: auto;
+  margin: 0 auto;
+}
+
+@media screen and (max-width:1024px) {
+  .o-logo__nankyoku.is-loading > .o-logo__nankyoku--item {
+    width: 30%;
+    max-width: none;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .o-logo__nankyoku.is-loading > .o-logo__nankyoku--item {
+    width: 40%;
+    max-width: none;
+  }
+}
+
+@media screen and (max-width:520px) {
+  .o-logo__nankyoku.is-loading > .o-logo__nankyoku--item {
+    width: 50%;
+    max-width: none;
+  }
+}
+
+.o-figure__loading {
+  width: 15%;
+  max-width: 240px;
+  position: relative;
+  margin: 0px auto;
+}
+
+@media screen and (max-width:1024px) {
+  .o-figure__loading {
+    width: 23%;
+    max-width: none;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .o-figure__loading {
+    width: 32%;
+    max-width: none;
+  }
+}
+
+@media screen and (max-width:520px) {
+  .o-figure__loading {
+    width: 40%;
+    max-width: none;
+  }
+}
+
+.o-figure__loading:before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.o-figure__loading--item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform-origin: center center;
+  -webkit-transform-origin: center center;
+  -ms-transform-origin: center center;
+  animation: rotate 2s linear infinite;
+  -webkit-animation: rotate 2s linear infinite;
+}
+
+.o-figure__loading--path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke: #fff;
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+  -webkit-animation: dash 1.5s ease-in-out infinite;
+}
+
+@-webkit-keyframes
+rotate {
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes
+rotate {
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes
+dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124;
+  }
+}
+
+@keyframes
+dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124;
+  }
+}
+
+    
+  </style>
+
+  <link href="/assets/styles/app.min.css" rel="stylesheet">
+
+  <!-- /local codes -->
+</head>
+<body class="body" data-pageId="tools">
+
+<div
+  class="f-container is-tools"
+  :class="{ 'is-blackOut': isBlackOut }"
+  id="app"
+  :data-is-screen-lock="isLock ? 'true' : 'false'">
+
+  <div class="f-container--body">
+    
+    <header
+  class="f-header"
+  :class="[
+    'f-header',
+    { 'is-fill': header.isOverThreshold },
+  ]"
+  ref="header">
+  <div class="f-header--body">
+    <section class="f-section__header">
+      <div class="f-section__header--body">
+        <div class="l-cols__header">
+          <!-- ロゴ -->
+          <div class="l-cols__header--col is-logo">
+            <div class="o-logo__nankyoku is-header">
+              <p class="o-logo__nankyoku--item">
+                <a class="o-logo__nankyoku--link" href="/">
+                  <img
+                    class="o-logo__nankyoku--image"
+                    :src="`${$GLOBAL_NAME.IMAGES.DIRECTORY}${header.logo}`"
+                    alt="南極。">
+                </a>
+              </p>
+            <!-- /.o-logo__nankyoku --></div>
+          <!-- /.l-cols__header col --></div>
+
+          <!-- ヘッダーナビゲーション -->
+          <div class="l-cols__header--col is-globalNavigation">
+            <follow-sns :state-class-name="['is-header']" />
+            
+          <!-- /.l-cols__header col --></div>
+
+          <div class="l-cols__header--col is-hamburger">
+            <div class="o-action__hamburger u-link__tooltip" data-tooltip="メニュー">
+              <button class="o-action__hamburger--item" @click.prevent="showGlobalNavigation">
+                メニュー
+              </button>
+            <!-- /.o-action__hamburger --></div>
+          <!-- /.l-cols__header col --></div>
+        <!-- /.l-cols__header --></div>
+      <!-- /.f-section__header body --></div>
+    <!-- /.f-section__header --></section>
+  <!-- /.f-header body --></div>
+<!-- /.f-header --></header>
+
+
+    
+    <main class="main">
+      
+<article class="f-article">
+  <div class="f-article--body">
+    
+    <section class="f-section__tools is-calendar">
+      <div class="f-section__tools--body">
+        <div class="l-cols is-col2 is-vCenter" data-is-breakpoint="pc">
+          <div class="l-cols--col">
+            <div class="o-heading__section is-tools">
+              <h2 class="o-heading__section--item">
+                <span class="o-heading__section--label is-primary">永遠にスケジュールが追い続けられる</span>
+                <span class="o-heading__section--label is-secondary">フロントラインカレンダー</span>
+              </h2>
+            <!-- /.o-heading__section --></div>
+          <!-- /.l-cols col --></div>
+
+          <div class="l-cols--col">
+            <front-line-calendar />
+          <!-- /.l-cols col --></div>
+        <!-- /.l-cols --></div>
+
+      <!-- /.f-section__tools body --></div>
+    <!-- /.f-section__tools --></section>
+
+    
+    <section class="f-section__tools is-secure">
+      <div class="f-section__tools--body">
+        <div class="l-cols is-col2 is-vCenter" data-is-breakpoint="pc">
+          <div class="l-cols--col">
+            <div class="o-heading__section is-tools">
+              <h2 class="o-heading__section--item">
+                <span class="o-heading__section--label is-primary">外縁遺跡群</span>
+                <span class="o-heading__section--label is-secondary">制圧戦</span>
+              </h2>
+            <!-- /.o-heading__section --></div>
+          <!-- /.l-cols col --></div>
+
+          <div class="l-cols--col">
+            <div class="o-table__tools is-secure">
+              <table class="o-table__tools--unit">
+                <caption class="o-table__tools--caption">
+                  基本情報
+                </caption>
+                <col class="o-table__tools--col is-30%">
+                <col class="o-table__tools--col is-30%">
+                <col class="o-table__tools--col">
+                <thead class="o-table__tools--header">
+                  <tr class="o-table__tools--row">
+                    <th class="o-table__tools--head">1 キル</th>
+                    <th class="o-table__tools--head">1 デス</th>
+                    <th class="o-table__tools--head">終了点</th>
+                  </tr>
+                </thead>
+                <tbody class="o-table__tools--body">
+                  <tr class="o-table__tools--row is-even">
+                    <td class="o-table__tools--data">5 pt</td>
+                    <td class="o-table__tools--data">-5 pt</td>
+                    <td class="o-table__tools--data">1600 pt</td>
+                  </tr>
+                </tbody>
+              </table>
+            <!-- /.o-table__tools --></div>
+
+            <div class="o-table__tools is-secure">
+              <table class="o-table__tools--unit">
+                <caption class="o-table__tools--caption">
+                  中央リス点数
+                </caption>
+                <col class="o-table__tools--col is-50%">
+                <col class="o-table__tools--col is-50%">
+                <thead class="o-table__tools--header">
+                  <tr class="o-table__tools--row">
+                    <th class="o-table__tools--head">ドローン（小リス）</th>
+                    <th class="o-table__tools--head">システム（大リス）</th>
+                  </tr>
+                </thead>
+                <tbody class="o-table__tools--body">
+                  <tr class="o-table__tools--row is-even">
+                    <td class="o-table__tools--data">25 pt</td>
+                    <td class="o-table__tools--data">250 pt</td>
+                  </tr>
+                </tbody>
+              </table>
+            <!-- /.o-table__tools --></div>
+
+            <div class="o-table__tools is-secure">
+              <table class="o-table__tools--unit">
+                <caption class="o-table__tools--caption">
+                  外周フラッグ点数
+                </caption>
+                <col class="o-table__tools--col is-50%">
+                <col class="o-table__tools--col is-50%">
+                <thead class="o-table__tools--header">
+                  <tr class="o-table__tools--row">
+                    <th class="o-table__tools--head">占拠数</th>
+                    <th class="o-table__tools--head">3 秒毎の加点数</th>
+                  </tr>
+                </thead>
+                <tbody class="o-table__tools--body">
+                  <tr class="o-table__tools--row is-even">
+                    <th class="o-table__tools--head">1つ</th>
+                    <td class="o-table__tools--data">1 pt</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-odd">
+                    <th class="o-table__tools--head">2つ</th>
+                    <td class="o-table__tools--data">2 pt</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-even">
+                    <th class="o-table__tools--head">3つ</th>
+                    <td class="o-table__tools--data">4 pt</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-odd">
+                    <th class="o-table__tools--head">4つ</th>
+                    <td class="o-table__tools--data">8 pt</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-even">
+                    <th class="o-table__tools--head">5つ</th>
+                    <td class="o-table__tools--data">16 pt</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-odd">
+                    <th class="o-table__tools--head">6つ</th>
+                    <td class="o-table__tools--data">32 pt</td>
+                  </tr>
+                </tbody>
+              </table>
+            <!-- /.o-table__tools --></div>
+
+            <div class="o-list__note">
+              <ul class="o-list__note--items">
+                <li class="o-list__note--item">
+                  外周フラッグは敵占拠状態から中立状態に変更で +10pt、中立状態から自軍占拠状態に変更で更に +10pt の加点がされます。
+                </li>
+              </ul>
+            <!-- /.o-list__note --></div>
+
+            <div class="o-table__tools is-secure">
+              <table class="o-table__tools--unit">
+                <caption class="o-table__tools--caption">
+                  中央リス沸き時間（目安）
+                </caption>
+                <col class="o-table__tools--col is-30%">
+                <col class="o-table__tools--col is-35%">
+                <col class="o-table__tools--col is-35%">
+                <thead class="o-table__tools--header">
+                  <tr class="o-table__tools--row">
+                    <th class="o-table__tools--head">沸き時間（目安）</th>
+                    <th class="o-table__tools--head">ドローン（小リス）</th>
+                    <th class="o-table__tools--head">システム（大リス）</th>
+                  </tr>
+                </thead>
+                <tbody class="o-table__tools--body">
+                  <tr class="o-table__tools--row is-even">
+                    <th class="o-table__tools--head">19:00</th>
+                    <td class="o-table__tools--data">
+                      6つ<br>
+                      （初回のみ 19:00 固定）
+                    </td>
+                    <td class="o-table__tools--data">-</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-odd">
+                    <th class="o-table__tools--head">15:00</th>
+                    <td class="o-table__tools--data">6つ</td>
+                    <td class="o-table__tools--data">-</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-even">
+                    <th class="o-table__tools--head">11:00</th>
+                    <td class="o-table__tools--data">6つ</td>
+                    <td class="o-table__tools--data">-</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-odd">
+                    <th class="o-table__tools--head">10:00</th>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">
+                      1つ<br>
+                      （10:00 固定）
+                    </td>
+                  </tr>
+                  <tr class="o-table__tools--row is-even">
+                    <th class="o-table__tools--head">6:00</th>
+                    <td class="o-table__tools--data">6つ</td>
+                    <td class="o-table__tools--data">-</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-odd">
+                    <th class="o-table__tools--head">2:00</th>
+                    <td class="o-table__tools--data">6つ</td>
+                    <td class="o-table__tools--data">-</td>
+                  </tr>
+                </tbody>
+              </table>
+            <!-- /.o-table__tools --></div>
+
+            <div class="o-list__note">
+              <ul class="o-list__note--items">
+                <li class="o-list__note--item">
+                  中央ドローン（小リス）の沸き時間は、<em class="em">初回が 19:00 固定沸き</em>となり、以降は前回のドローン全滅後、<em class="em">4分経過</em>で沸きます。<br>
+                  (よって、上記表の記載時間はあくまで目安であり、戦場ごとに変動しますのでご注意ください。)
+                </li>
+                <li class="o-list__note--item">
+                  中央システム（大リス）の沸き時間は、ドローン（小リス）とは違い、<em class="em">10:00 固定沸き</em>となります。
+                </li>
+                <li class="o-list__note--item">
+                  中央システム（大リス）は、一定時間で壊されなかった場合、カウントダウンの後自爆し、周囲に大ダメージを与えます。<br>
+                  (ただし、最近はプレイヤー側の火力が高いためほぼ発生しません。)
+                </li>
+              </ul>
+            <!-- /.o-list__note --></div>
+          <!-- /.l-cols col --></div>
+        <!-- /.l-cols --></div>
+
+      <!-- /.f-section__tools body --></div>
+    <!-- /.f-section__tools --></section>
+
+    
+    <section class="f-section__tools is-seize">
+      <div class="f-section__tools--body">
+        <div class="l-cols is-col2 is-vCenter" data-is-breakpoint="pc">
+          <div class="l-cols--col">
+            <div class="o-heading__section is-tools">
+              <h2 class="o-heading__section--item">
+                <span class="o-heading__section--label is-primary">シールロック</span>
+                <span class="o-heading__section--label is-secondary">争奪戦</span>
+              </h2>
+            <!-- /.o-heading__section --></div>
+          <!-- /.l-cols col --></div>
+
+          <div class="l-cols--col">
+            <div class="o-table__tools is-seize">
+              <table class="o-table__tools--unit">
+                <caption class="o-table__tools--caption">
+                  基本情報
+                </caption>
+                <col class="o-table__tools--col is-30%">
+                <col class="o-table__tools--col is-30%">
+                <col class="o-table__tools--col">
+                <thead class="o-table__tools--header">
+                  <tr class="o-table__tools--row">
+                    <th class="o-table__tools--head">1 キル</th>
+                    <th class="o-table__tools--head">1 デス</th>
+                    <th class="o-table__tools--head">終了点</th>
+                  </tr>
+                </thead>
+                <tbody class="o-table__tools--body">
+                  <tr class="o-table__tools--row is-even">
+                    <td class="o-table__tools--data">5 pt</td>
+                    <td class="o-table__tools--data">-5 pt</td>
+                    <td class="o-table__tools--data">800 pt</td>
+                  </tr>
+                </tbody>
+              </table>
+            <!-- /.o-table__tools --></div>
+
+            <div class="o-table__tools is-seize">
+              <table class="o-table__tools--unit">
+                <caption class="o-table__tools--caption">
+                  リス点数（総得点）
+                </caption>
+                <col class="o-table__tools--col is-20%">
+                <col class="o-table__tools--col is-20%">
+                <col class="o-table__tools--col is-20%">
+                <thead class="o-table__tools--header">
+                  <tr class="o-table__tools--row">
+                    <th class="o-table__tools--head">B（三角形）</th>
+                    <th class="o-table__tools--head">A（四角形）</th>
+                    <th class="o-table__tools--head">S（五角形）</th>
+                  </tr>
+                </thead>
+                <tbody class="o-table__tools--body">
+                  <tr class="o-table__tools--row is-even">
+                    <td class="o-table__tools--data">80 pt</td>
+                    <td class="o-table__tools--data">120 pt</td>
+                    <td class="o-table__tools--data">160 pt</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="o-table__tools--unit">
+                <caption class="o-table__tools--caption">
+                  リス点数（加点ペース）
+                </caption>
+                <col class="o-table__tools--col">
+                <col class="o-table__tools--col is-20%">
+                <col class="o-table__tools--col is-20%">
+                <col class="o-table__tools--col is-20%">
+                <thead class="o-table__tools--header">
+                  <tr class="o-table__tools--row">
+                    <th class="o-table__tools--head">時間</th>
+                    <th class="o-table__tools--head">B（三角形）</th>
+                    <th class="o-table__tools--head">A（四角形）</th>
+                    <th class="o-table__tools--head">S（五角形）</th>
+                  </tr>
+                </thead>
+                <tbody class="o-table__tools--body">
+                  <tr class="o-table__tools--row is-even">
+                    <th class="o-table__tools--head">基準加点ペース (3s)</th>
+                    <td class="o-table__tools--data">2 pt</td>
+                    <td class="o-table__tools--data">3 pt</td>
+                    <td class="o-table__tools--data">4 pt</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-odd">
+                    <th class="o-table__tools--head">30s</th>
+                    <td class="o-table__tools--data">20 pt</td>
+                    <td class="o-table__tools--data">30 pt</td>
+                    <td class="o-table__tools--data">40 pt</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-even">
+                    <th class="o-table__tools--head">60s</th>
+                    <td class="o-table__tools--data">40 pt</td>
+                    <td class="o-table__tools--data">60 pt</td>
+                    <td class="o-table__tools--data">80 pt</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-odd">
+                    <th class="o-table__tools--head">90s</th>
+                    <td class="o-table__tools--data">60 pt</td>
+                    <td class="o-table__tools--data">90 pt</td>
+                    <td class="o-table__tools--data">120 pt</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-even">
+                    <th class="o-table__tools--head">120s</th>
+                    <td class="o-table__tools--data">80 pt</td>
+                    <td class="o-table__tools--data">120 pt</td>
+                    <td class="o-table__tools--data">160 pt</td>
+                  </tr>
+                </tbody>
+              </table>
+            <!-- /.o-table__tools --></div>
+
+            <div class="o-list__note">
+              <ul class="o-list__note--items">
+                <li class="o-list__note--item">
+                  シールロックのリスは、敵による再契約（塗り替え）が可能であるため、リスの保有得点を契約時間に応じて分け合う形となります。
+                </li>
+              </ul>
+            <!-- /.o-list__note --></div>
+          <!-- /.l-cols col --></div>
+        <!-- /.l-cols --></div>
+
+      <!-- /.f-section__tools body --></div>
+    <!-- /.f-section__tools --></section>
+
+    
+    <section class="f-section__tools is-shatter">
+      <div class="f-section__tools--body">
+        <div class="l-cols is-col2 is-vCenter" data-is-breakpoint="pc">
+          <div class="l-cols--col">
+            <div class="o-heading__section is-tools">
+              <h2 class="o-heading__section--item">
+                <span class="o-heading__section--label is-primary">フィールド・オブ・グローリー</span>
+                <span class="o-heading__section--label is-secondary">砕氷戦</span>
+              </h2>
+            <!-- /.o-heading__section --></div>
+          <!-- /.l-cols col --></div>
+
+          <div class="l-cols--col">
+            <div class="o-table__tools is-shatter">
+              <table class="o-table__tools--unit">
+                <caption class="o-table__tools--caption">
+                  基本情報
+                </caption>
+                <col class="o-table__tools--col is-30%">
+                <col class="o-table__tools--col is-30%">
+                <col class="o-table__tools--col">
+                <thead class="o-table__tools--header">
+                  <tr class="o-table__tools--row">
+                    <th class="o-table__tools--head">1 キル</th>
+                    <th class="o-table__tools--head">1 デス</th>
+                    <th class="o-table__tools--head">終了点</th>
+                  </tr>
+                </thead>
+                <tbody class="o-table__tools--body">
+                  <tr class="o-table__tools--row is-even">
+                    <td class="o-table__tools--data">10 pt</td>
+                    <td class="o-table__tools--data">-10 pt</td>
+                    <td class="o-table__tools--data">1600 pt</td>
+                  </tr>
+                </tbody>
+              </table>
+            <!-- /.o-table__tools --></div>
+
+            <div class="o-table__tools is-shatter">
+              <table class="o-table__tools--unit">
+                <caption class="o-table__tools--caption">
+                  氷点数（総得点）
+                </caption>
+                <col class="o-table__tools--col is-20%">
+                <col class="o-table__tools--col is-20%">
+                <col class="o-table__tools--col is-20%">
+                <thead class="o-table__tools--header">
+                  <tr class="o-table__tools--row">
+                    <th class="o-table__tools--head">小</th>
+                    <th class="o-table__tools--head">大</th>
+                    <th class="o-table__tools--head">拠点（アウトポスト）</th>
+                  </tr>
+                </thead>
+                <tbody class="o-table__tools--body">
+                  <tr class="o-table__tools--row is-even">
+                    <td class="o-table__tools--data">70 pt</td>
+                    <td class="o-table__tools--data">300 pt</td>
+                    <td class="o-table__tools--data">2 pt / 3s</td>
+                  </tr>
+                </tbody>
+              </table>
+            <!-- /.o-table__tools --></div>
+
+            <div class="o-table__tools is-shatter">
+              <table class="o-table__tools--unit">
+                <caption class="o-table__tools--caption">
+                  氷沸きパターン・時間
+                </caption>
+                <col class="o-table__tools--col">
+                <col class="o-table__tools--col">
+                <col class="o-table__tools--col">
+                <col class="o-table__tools--col">
+                <col class="o-table__tools--col">
+                <col class="o-table__tools--col">
+                <col class="o-table__tools--col">
+                <col class="o-table__tools--col">
+                <col class="o-table__tools--col">
+                <col class="o-table__tools--col">
+                <col class="o-table__tools--col">
+                <thead class="o-table__tools--header">
+                  <tr class="o-table__tools--row">
+                    <th class="o-table__tools--head" rowspan="2">時間</th>
+                    <th class="o-table__tools--head" colspan="6">小氷パターン</th>
+                    <th class="o-table__tools--head" colspan="4">大氷パターン</th>
+                  </tr>
+                  <tr class="o-table__tools--row">
+                    <th class="o-table__tools--head">1</th>
+                    <th class="o-table__tools--head">2</th>
+                    <th class="o-table__tools--head">3</th>
+                    <th class="o-table__tools--head">4</th>
+                    <th class="o-table__tools--head">5</th>
+                    <th class="o-table__tools--head">6</th>
+                    <th class="o-table__tools--head">A</th>
+                    <th class="o-table__tools--head">B</th>
+                    <th class="o-table__tools--head">C</th>
+                    <th class="o-table__tools--head">D</th>
+                  </tr>
+                </thead>
+                <tbody class="o-table__tools--body">
+                  <tr class="o-table__tools--row is-even">
+                    <th class="o-table__tools--head">19:45</th>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">6</td>
+                    <td class="o-table__tools--data">6</td>
+                    <td class="o-table__tools--data">18</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-odd">
+                    <th class="o-table__tools--head">19:00</th>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-even">
+                    <th class="o-table__tools--head">18:00</th>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-odd">
+                    <th class="o-table__tools--head">17:20</th>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-even">
+                    <th class="o-table__tools--head">17:00</th>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-odd">
+                    <th class="o-table__tools--head">16:40</th>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-even">
+                    <th class="o-table__tools--head">16:00</th>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">4</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">4</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-odd">
+                    <th class="o-table__tools--head">15:20</th>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-even">
+                    <th class="o-table__tools--head">15:00</th>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">2</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-odd">
+                    <th class="o-table__tools--head">14:40</th>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-even">
+                    <th class="o-table__tools--head">14:00</th>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">1</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-odd">
+                    <th class="o-table__tools--head">13:20</th>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-even">
+                    <th class="o-table__tools--head">13:00</th>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-odd">
+                    <th class="o-table__tools--head">12:40</th>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-even">
+                    <th class="o-table__tools--head">12:00</th>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">4</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">4</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">1</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-odd">
+                    <th class="o-table__tools--head">11:20</th>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-even">
+                    <th class="o-table__tools--head">11:00</th>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-odd">
+                    <th class="o-table__tools--head">10:40</th>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-even">
+                    <th class="o-table__tools--head">10:00</th>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">2</td>
+                    <td class="o-table__tools--data">1</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-odd">
+                    <th class="o-table__tools--head">09:20</th>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-even">
+                    <th class="o-table__tools--head">09:00</th>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-odd">
+                    <th class="o-table__tools--head">08:40</th>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                  </tr>
+                  <tr class="o-table__tools--row is-even">
+                    <th class="o-table__tools--head">08:00</th>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">6</td>
+                    <td class="o-table__tools--data">6</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">4</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">1</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">-</td>
+                    <td class="o-table__tools--data">1</td>
+                  </tr>
+                </tbody>
+              </table>
+            <!-- /.o-table__tools --></div>
+
+            <div class="o-list__note">
+              <ul class="o-list__note--items">
+                <li class="o-list__note--item">
+                  実際の沸きパターンは大・小の組み合わせ 10 パターン程度に限定されるようなので、小 6 パターン × 大 4 パターン ということにはなりません。<br>
+                  (実際の沸きパターンを加味したパターン表は近日アップデートします。)
+                </li>
+              </ul>
+            <!-- /.o-list__note --></div>
+          <!-- /.l-cols col --></div>
+        <!-- /.l-cols --></div>
+
+      <!-- /.f-section__tools body --></div>
+    <!-- /.f-section__tools --></section>
+
+    
+    <section class="f-section__tools is-danshigNaadam">
+      <div class="f-section__tools--body">
+        <div class="l-cols is-col2 is-vCenter" data-is-breakpoint="pc">
+          <div class="l-cols--col">
+            <div class="o-heading__section is-tools">
+              <h2 class="o-heading__section--item">
+                <span class="o-heading__section--label is-primary">オンサル・ハカイル</span>
+                <span class="o-heading__section--label is-secondary">終節戦</span>
+              </h2>
+            <!-- /.o-heading__section --></div>
+          <!-- /.l-cols col --></div>
+
+          <div class="l-cols--col">
+            <div class="o-table__tools is-danshigNaadam">
+              <table class="o-table__tools--unit">
+                <caption class="o-table__tools--caption">
+                  基本情報
+                </caption>
+                <col class="o-table__tools--col is-30%">
+                <col class="o-table__tools--col is-30%">
+                <col class="o-table__tools--col">
+                <thead class="o-table__tools--header">
+                  <tr class="o-table__tools--row">
+                    <th class="o-table__tools--head">1 キル</th>
+                    <th class="o-table__tools--head">1 デス</th>
+                    <th class="o-table__tools--head">終了点</th>
+                  </tr>
+                </thead>
+                <tbody class="o-table__tools--body">
+                  <tr class="o-table__tools--row is-even">
+                    <td class="o-table__tools--data">8 pt</td>
+                    <td class="o-table__tools--data">-8 pt</td>
+                    <td class="o-table__tools--data">1600 pt</td>
+                  </tr>
+                </tbody>
+              </table>
+            <!-- /.o-table__tools --></div>
+
+            <div class="o-table__tools is-danshigNaadam">
+              <table class="o-table__tools--unit">
+                <caption class="o-table__tools--caption">
+                  リス点数
+                </caption>
+                <col class="o-table__tools--col is-20%">
+                <col class="o-table__tools--col is-20%">
+                <col class="o-table__tools--col is-20%">
+                <thead class="o-table__tools--header">
+                  <tr class="o-table__tools--row">
+                    <th class="o-table__tools--head">B（三角形）</th>
+                    <th class="o-table__tools--head">A（四角形）</th>
+                    <th class="o-table__tools--head">S（五角形）</th>
+                  </tr>
+                </thead>
+                <tbody class="o-table__tools--body">
+                  <tr class="o-table__tools--row is-even">
+                    <td class="o-table__tools--data">50 pt</td>
+                    <td class="o-table__tools--data">100 pt</td>
+                    <td class="o-table__tools--data">200 pt</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="o-table__tools--unit">
+                <caption class="o-table__tools--caption">
+                  リス点数（加点ペース）
+                </caption>
+                <col class="o-table__tools--col">
+                <col class="o-table__tools--col is-20%">
+                <col class="o-table__tools--col is-20%">
+                <col class="o-table__tools--col is-20%">
+                <thead class="o-table__tools--header">
+                  <tr class="o-table__tools--row">
+                    <th class="o-table__tools--head">時間</th>
+                    <th class="o-table__tools--head">B（三角形）</th>
+                    <th class="o-table__tools--head">A（四角形）</th>
+                    <th class="o-table__tools--head">S（五角形）</th>
+                  </tr>
+                </thead>
+                <tbody class="o-table__tools--body">
+                  <tr class="o-table__tools--row is-even">
+                    <th class="o-table__tools--head">基準加点ペース (3s)</th>
+                    <td class="o-table__tools--data">5 pt</td>
+                    <td class="o-table__tools--data">10 pt</td>
+                    <td class="o-table__tools--data">20 pt</td>
+                  </tr>
+                </tbody>
+              </table>
+            <!-- /.o-table__tools --></div>
+
+            <div class="o-list__note">
+              <ul class="o-list__note--items">
+                <li class="o-list__note--item">
+                  オンサル・ハカイルのリスは、シールロックとは違い、敵による<em class="em">再契約（塗り替え）ができません</em>。
+                </li>
+              </ul>
+            <!-- /.o-list__note --></div>
+          <!-- /.l-cols col --></div>
+        <!-- /.l-cols --></div>
+
+      <!-- /.f-section__tools body --></div>
+    <!-- /.f-section__tools --></section>
+  <!-- /.f-article body --></div>
+<!-- /.f-article --></article>
+
+
+      <share-services
+        :activate="{ twitter: true }"
+        :stack-anchor-position="footerPosition">
+        
+      </share-services>
+    </main>
+
+    
+    <footer class="footer" ref="footer">
+      
+<section class="f-section__footerNavigation">
+  
+  <div class="f-section__footerNavigation--body">
+    <div class="l-cols__footerNavigation">
+      <navigation-global :state-class-name="['is-footer']" />
+    <!-- /.l-cols__footerNavigation --></div>
+  <!-- /.f-section__footerNavigation body --></div>
+<!-- /.f-section__footerNavigation --></section>
+
+<section class="f-section__footer">
+  
+  <div class="f-section__footer--body">
+    <div class="o-logo__nankyoku is-footer">
+      <h1 class="o-logo__nankyoku--item">
+        <a class="o-logo__nankyoku--link" href="/">
+          <img
+            class="o-logo__nankyoku--image"
+            :src="`${$GLOBAL_NAME.IMAGES.DIRECTORY}logo_black.svg`"
+            alt="南極。">
+        </a>
+      </h1>
+    <!-- /.o-logo__nankyoku --></div>
+  <!-- /.f-section__footer body --></div>
+
+  
+  <div class="f-section__footer--body">
+    <follow-sns :state-class-name="['is-footer']"></follow-sns>
+
+    <div class="o-label__copyright is-footer">
+      <p class="o-label__copyright--item">
+        This website created by Chata Curio in Ifrit server.<br>
+        copyright (c) 2022- 南極。 Some Rights Reserved.
+      </p>
+    <!-- /.o-label__copyright --></div>
+  <!-- /.f-section__footer body --></div>
+<!-- /.f-section__footer --></section>
+
+    </footer>
+
+    <navigation-drawer></navigation-drawer>
+
+    
+    <section class="f-section__loading" v-cloak>
+      <div class="f-section__loading--body">
+        <div class="l-unit__loading">
+          <div class="l-unit__loading--image">
+            <div class="o-logo__nankyoku is-loading">
+              <p class="o-logo__nankyoku--item">
+                <img
+                  class="img"
+                  src="/assets/images/logo_white.svg"
+                  alt=""
+                  width="0"
+                  height="0">
+              </p>
+            <!-- /.o-logo__nankyoku --></div>
+          <!-- /.l-unit__loading image --></div>
+
+          <div class="l-unit__loading--description">
+            <div class="o-figure__loading">
+              <svg class="o-figure__loading--item" viewBox="25 25 50 50">
+                <circle
+                  class="o-figure__loading--path"
+                  cx="50"
+                  cy="50"
+                  r="20"
+                  fill="none"
+                  stroke-width="2"
+                  stroke-miterlimit="10">
+              </svg>
+            <!-- /.o-figure__loading --></div>
+          <!-- /.l-unit__loading description --></div>
+        <!-- /.l-unit__loading --></div>
+      <!-- /.f-section__loading body --></div>
+    <!-- /.f-section__loading --></section>
+  <!-- /.f-container body --></div>
+<!-- /.f-container --></div>
+</body>
+
+<script>
+
+
+var ANTARCTIC_APP = ANTARCTIC_APP || {};
+ANTARCTIC_APP.currentTime = new Date();
+ANTARCTIC_APP.vm = null;
+ANTARCTIC_APP.reactiveData = {
+  local: {  },
+};
+</script>
+
+<script src="/assets/scripts/bundle.development.vendor.js"></script>
+<script src="/assets/scripts/bundle.development.app.js"></script>
+</html>
