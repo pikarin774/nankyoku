@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <title>ホーム | 南極。</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+
+  <meta name="description" content="base_description">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="webview:title" content="ホーム">
+  <meta name="theme-color" content="#000">
+
+  
+    <meta property="og:url" content="http://localhost:8003/top/">
+    <meta property="og:title" content="ホーム | 南極。">
+    <meta property="og:description" content="base_description">
+    <meta property="og:site_name" content="南極。">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="http://localhost:8003/assets/images/ogimage_01.png">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@Chata_Curio" />
+    <meta name="twitter:title" content="ホーム | 南極。">
+    <meta name="twitter:description" content="base_description">
+  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300;500;800&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png" />
+
+  <style>
+    .body[v-cloak] {
+  overflow: scroll
+}
+
+.is-lazyload,
+.is-lazyloading {
+  max-width: 64px;
+}
+
+.f-section__loading {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 1);
+  z-index: 30;
+}
+
+.f-section__loading[v-cloak] {
+  display: block;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.f-section__loading:not([v-cloak]) {
+  animation: hideLoading 1s ease forwards;
+}
+
+.f-section__loading--body {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+@keyframes hideLoading {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  99% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-9999px);
+  }
+}
+
+.l-unit__loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.l-unit__loading--image {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 31;
+}
+
+.l-unit__loading--description {
+  width: 100%;
+}
+
+.o-logo__nankyoku.is-loading {
+  opacity: 1;
+}
+
+.o-logo__nankyoku.is-loading > .o-logo__nankyoku--item {
+  width: 20%;
+  max-width: 320px;
+  height: auto;
+  margin: 0 auto;
+}
+
+@media screen and (max-width:1024px) {
+  .o-logo__nankyoku.is-loading > .o-logo__nankyoku--item {
+    width: 30%;
+    max-width: none;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .o-logo__nankyoku.is-loading > .o-logo__nankyoku--item {
+    width: 40%;
+    max-width: none;
+  }
+}
+
+@media screen and (max-width:520px) {
+  .o-logo__nankyoku.is-loading > .o-logo__nankyoku--item {
+    width: 50%;
+    max-width: none;
+  }
+}
+
+.o-figure__loading {
+  width: 15%;
+  max-width: 240px;
+  position: relative;
+  margin: 0px auto;
+}
+
+@media screen and (max-width:1024px) {
+  .o-figure__loading {
+    width: 23%;
+    max-width: none;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .o-figure__loading {
+    width: 32%;
+    max-width: none;
+  }
+}
+
+@media screen and (max-width:520px) {
+  .o-figure__loading {
+    width: 40%;
+    max-width: none;
+  }
+}
+
+.o-figure__loading:before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.o-figure__loading--item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform-origin: center center;
+  -webkit-transform-origin: center center;
+  -ms-transform-origin: center center;
+  animation: rotate 2s linear infinite;
+  -webkit-animation: rotate 2s linear infinite;
+}
+
+.o-figure__loading--path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke: #fff;
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+  -webkit-animation: dash 1.5s ease-in-out infinite;
+}
+
+@-webkit-keyframes
+rotate {
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes
+rotate {
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes
+dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124;
+  }
+}
+
+@keyframes
+dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124;
+  }
+}
+
+    
+  </style>
+
+  <link href="/assets/styles/app.min.css" rel="stylesheet">
+
+  <!-- /local codes -->
+</head>
+<body class="body" data-pageId="top">
+
+<div
+  class="f-container is-top"
+  :class="{ 'is-blackOut': isBlackOut }"
+  id="app"
+  :data-is-screen-lock="isLock ? 'true' : 'false'">
+
+  <div class="f-container--body">
+    
+    <header
+  class="f-header"
+  :class="[
+    'f-header',
+    { 'is-fill': header.isOverThreshold },
+  ]"
+  ref="header">
+  <div class="f-header--body">
+    <section class="f-section__header">
+      <div class="f-section__header--body">
+        <div class="l-cols__header">
+          <!-- ロゴ -->
+          <div class="l-cols__header--col is-logo">
+            <div class="o-logo__nankyoku is-header">
+              <p class="o-logo__nankyoku--item">
+                <a class="o-logo__nankyoku--link" href="/">
+                  <img
+                    class="o-logo__nankyoku--image"
+                    :src="`${$GLOBAL_NAME.IMAGES.DIRECTORY}${header.logo}`"
+                    alt="南極。">
+                </a>
+              </p>
+            <!-- /.o-logo__nankyoku --></div>
+          <!-- /.l-cols__header col --></div>
+
+          <!-- ヘッダーナビゲーション -->
+          <div class="l-cols__header--col is-globalNavigation">
+            <follow-sns :state-class-name="['is-header']" />
+            
+          <!-- /.l-cols__header col --></div>
+
+          <div class="l-cols__header--col is-hamburger">
+            <div class="o-action__hamburger u-link__tooltip" data-tooltip="メニュー">
+              <button class="o-action__hamburger--item" @click.prevent="showGlobalNavigation">
+                メニュー
+              </button>
+            <!-- /.o-action__hamburger --></div>
+          <!-- /.l-cols__header col --></div>
+        <!-- /.l-cols__header --></div>
+      <!-- /.f-section__header body --></div>
+    <!-- /.f-section__header --></section>
+  <!-- /.f-header body --></div>
+<!-- /.f-header --></header>
+
+
+    
+    <main class="main">
+      
+
+<article class="article">
+  <section class="f-section__hero is-home">
+    
+    <div class="f-section__hero--body">
+      <carousel-fade
+        :items="hero.items"
+        :select-index="hero.index"
+        :enable-controller="false"
+        :enable-auto-play="true"
+        :enable-zoom="false"
+        :has-indicator="false"
+        :auto-play-interval-millis="20000"
+        :additional-style-class="[
+          'is-home',
+        ]">
+        <template slot-scope="{ item }">
+          <div class="o-figure__hero is-home">
+            <div
+              class="o-figure__hero--item"
+              :style="{ backgroundImage: `url(${$GLOBAL_NAME.IMAGES.DIRECTORY}${item.image}`}">
+            </div>
+          <!-- /.o-figure__hero --></div>
+        </template>
+      </carousel-fade>
+
+      
+      <div class="o-logo__nankyoku is-home">
+        <h1 class="o-logo__nankyoku--item">
+          <img
+            class="o-logo__nankyoku--image"
+            :src="`${$GLOBAL_NAME.IMAGES.DIRECTORY}logo_white_vertical.svg`"
+            alt="南極。">
+        </h1>
+      <!-- /.o-logo__nankyoku --></div>
+    <!-- /.f-section__hero body --></div>
+  <!-- /.f-section__hero --></section>
+
+  
+  <section class="f-section__home is-youtube" :ref="showHeaderThreshold">
+    <div class="f-section__home--body">
+      <div class="l-cols is-col2 is-vCenter">
+        <div class="l-cols--col">
+          <div class="o-heading__section is-home is-youtube">
+            <h2 class="o-heading__section--item">
+              <span class="o-heading__section--label is-primary">
+                UPDATE
+              </span>
+              <span class="o-heading__section--label is-secondary">
+                YOUTUBE
+              </span>
+            </h2>
+          <!--  /.o-heading__section --></div>
+        <!-- /.l-cols col --></div>
+
+        <div class="l-cols--col">
+          <div class="o-action__youtube">
+            <a class="o-action__youtube--item">
+              <img
+                class="o-action__youtube--image"
+                :src="`${$GLOBAL_NAME.IMAGES.DIRECTORY}pic_youtube_01.jpg`"
+                alt="">
+            </a>
+          <!-- /.o-action__youtube --></div>
+        <!-- /.l-cols col --></div>
+      <!-- /.l-cols --></div>
+    <!-- /.f-section__home body --></div>
+  <!-- /.f-section__home --></section>
+
+  
+  <section class="f-section__home is-promotion">
+    <div class="f-section__home--body">
+      <div class="o-heading__section is-home is-promotion">
+        <h2 class="o-heading__section--item">
+          <span class="o-heading__section--label is-primary">
+            What's NEW
+          </span>
+          <span class="o-heading__section--label is-secondary">
+            ニュース
+          </span>
+        </h2>
+      <!--  /.o-heading__section --></div>
+
+      <div class="o-figure__banner is-home">
+        <img
+          class="o-figure__banner--item"
+          :src="`${$GLOBAL_NAME.IMAGES.DIRECTORY}banner_top_01.jpg`"
+          alt="">
+      <!-- /.o-figure__banner --></div>
+    <!-- /.f-section__home body --></div>
+  <!-- /.f-section__home --></section>
+
+  
+  <section class="f-section__home is-information">
+    <div class="f-section__home--body">
+      <div class="l-cols__information is-home">
+        <div
+          class="l-cols__information--col"
+          v-for="(info, index) in information"
+          :key="index">
+          <div class="l-unit__information is-home">
+            <div class="l-unit__information--header">
+              <div class="o-heading__information is-home">
+                <h3 class="o-heading__information--item">
+                  {{ info.date }}
+                </h3>
+              <!-- /.o-heading__information --></div>
+            <!-- /.l-unit__information header --></div>
+
+            <div class="l-unit__information--image">
+              <div class="o-figure__post">
+                <img
+                  class="o-figure__post--item"
+                  :src="info.image"
+                  alt="">
+              <!-- /.o-figure__post --></div>
+            <!-- /.l-unit__information image --></div>
+
+            <div class="l-unit__information--description">
+              <div class="o-label__information is-home">
+                <p class="o-label__information--item">
+                  {{ info.label }}
+                </p>
+              <!-- /.o-label__information --></div>
+            <!-- /.l-unit__information description --></div>
+
+            <div class="l-unit__information--footer is-category">
+              <div class="o-label__category is-information" :class="`is-${info.category}`">
+                <p class="o-label__category--item">{{ info.category }}</p>
+              <!-- /.o-label__category --></div>
+            <!-- /.l-unit__information description --></div>
+          <!-- /.l-unit__information --></div>
+        <!-- /.l-cols__information col --></div>
+      <!-- /.l-cols__information --></div>
+    <!-- /.f-section__home body --></div>
+  <!-- /.f-section__home --></section>
+
+  <section class="f-section is-fill__darkgray">
+    <div class="f-section--body">
+      <div class="o-list__note u-text__center">
+        <ul class="o-list__note--items">
+          <li class="o-list__note--item">エイプリルフールのネタサイトです。</li>
+        </ul>
+      <!-- /.o-list__note --></div>
+    <!-- /.f-section body --></div>
+  <!-- /.f-section --></section>
+</article>
+
+
+      <share-services
+        :activate="{ twitter: true }"
+        :stack-anchor-position="footerPosition">
+        
+      </share-services>
+    </main>
+
+    
+    <footer class="footer" ref="footer">
+      
+<section class="f-section__footerNavigation">
+  
+  <div class="f-section__footerNavigation--body">
+    <div class="l-cols__footerNavigation">
+      <navigation-global :state-class-name="['is-footer']" />
+    <!-- /.l-cols__footerNavigation --></div>
+  <!-- /.f-section__footerNavigation body --></div>
+<!-- /.f-section__footerNavigation --></section>
+
+<section class="f-section__footer">
+  
+  <div class="f-section__footer--body">
+    <div class="o-logo__nankyoku is-footer">
+      <h1 class="o-logo__nankyoku--item">
+        <a class="o-logo__nankyoku--link" href="/">
+          <img
+            class="o-logo__nankyoku--image"
+            :src="`${$GLOBAL_NAME.IMAGES.DIRECTORY}logo_black.svg`"
+            alt="南極。">
+        </a>
+      </h1>
+    <!-- /.o-logo__nankyoku --></div>
+  <!-- /.f-section__footer body --></div>
+
+  
+  <div class="f-section__footer--body">
+    <follow-sns :state-class-name="['is-footer']"></follow-sns>
+
+    <div class="o-label__copyright is-footer">
+      <p class="o-label__copyright--item">
+        This website created by Chata Curio in Ifrit server.<br>
+        copyright (c) 2022- 南極。 Some Rights Reserved.
+      </p>
+    <!-- /.o-label__copyright --></div>
+  <!-- /.f-section__footer body --></div>
+<!-- /.f-section__footer --></section>
+
+    </footer>
+
+    <navigation-drawer></navigation-drawer>
+
+    
+    <section class="f-section__loading" v-cloak>
+      <div class="f-section__loading--body">
+        <div class="l-unit__loading">
+          <div class="l-unit__loading--image">
+            <div class="o-logo__nankyoku is-loading">
+              <p class="o-logo__nankyoku--item">
+                <img
+                  class="img"
+                  src="/assets/images/logo_white.svg"
+                  alt=""
+                  width="0"
+                  height="0">
+              </p>
+            <!-- /.o-logo__nankyoku --></div>
+          <!-- /.l-unit__loading image --></div>
+
+          <div class="l-unit__loading--description">
+            <div class="o-figure__loading">
+              <svg class="o-figure__loading--item" viewBox="25 25 50 50">
+                <circle
+                  class="o-figure__loading--path"
+                  cx="50"
+                  cy="50"
+                  r="20"
+                  fill="none"
+                  stroke-width="2"
+                  stroke-miterlimit="10">
+              </svg>
+            <!-- /.o-figure__loading --></div>
+          <!-- /.l-unit__loading description --></div>
+        <!-- /.l-unit__loading --></div>
+      <!-- /.f-section__loading body --></div>
+    <!-- /.f-section__loading --></section>
+  <!-- /.f-container body --></div>
+<!-- /.f-container --></div>
+</body>
+
+<script>
+
+
+var ANTARCTIC_APP = ANTARCTIC_APP || {};
+ANTARCTIC_APP.currentTime = new Date();
+ANTARCTIC_APP.vm = null;
+ANTARCTIC_APP.reactiveData = {
+  local: { 
+information: [
+  {
+    date: '2022-04-01',
+    category: 'notice',
+    image: '/assets/images/banner_top_01.jpg',
+    label: '新作ゲーム『おは★どろ』が 8 月に発売されます！',
+  },
+  {
+    date: '2022-04-01',
+    category: 'notice',
+    image: '/assets/images/pic_youtube_01.jpg',
+    label: 'ろあにゃん YouTube の初配信は 4 月放送予定！お楽しみに！',
+  },
+  {
+    date: '2022-04-01',
+    category: 'event',
+    image: '/assets/images/pic_information_02.jpg',
+    label: '5 月 2 日より、南極。ゴールデンウィークイベントが開催されます。',
+  },
+  {
+    date: '2022-04-01',
+    category: 'release',
+    image: '/assets/images/pic_information_01.jpg',
+    label: 'PvP コミュニティ『南極』の公式サイト『南極。』がオープンしました。',
+  },
+],
+ },
+};
+</script>
+
+<script src="/assets/scripts/bundle.development.vendor.js"></script>
+<script src="/assets/scripts/bundle.development.app.js"></script>
+</html>
